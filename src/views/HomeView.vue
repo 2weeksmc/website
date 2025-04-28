@@ -4,32 +4,35 @@ import CardComponent from '@/components/home/CardComponent.vue'
 
 <template>
   <main class="w-full min-h-[calc(100svh-5rem)] text-white">
-    <div class="w-full h-100 bg-amber-800"><!--Banner--></div>
-    <div class="mt-16 w-full flex flex-col items-center">
-      <div class="max-w-3/4 flex flex-wrap justify-center gap-8">
+    <div class="relative w-full h-100 bg-[url(/server.png)] bg-no-repeat bg-cover bg-center">
+      <div class="absolute w-full h-full bg-[#FF8C00]/15"></div>
+    </div>
+    <div class="w-full flex flex-col items-center">
+      <div class="max-w-3/4 p-16 flex flex-wrap justify-center gap-8">
         <CardComponent
-          img="@/assets/money_off.svg"
+          img="money_off"
           head="Free Server"
-          desc="You can get a free minecraft server for two weeks, like our name and for a good two weeks
-            minecraft phase, with a month cooldown."
+          desc="Free two-week Minecraft server with a one-month cooldown."
         />
         <CardComponent
-          img="@/assets/upgrade.svg"
+          img="upgrade"
           head="Cheap Upgrades"
-          desc="For a small amount of money you can buy gems in our store to buy a better server or
-            upgrade your current server."
+          desc="Buy gems to upgrade your server or get a better one."
         />
         <CardComponent
-          img="@/assets/backup.svg"
+          img="backup"
           head="Daily Backups"
-          desc="To prevent data loss after system failures we are backuping daily two times, the backups
-            will save for five days."
+          desc="Backups run twice daily and are kept for five days."
         />
         <CardComponent
-          img="@/assets/dashboard.svg"
-          head="Modern Control-Panel"
-          desc="Our control panel was created for the best experience with minecraft servers and plugins
-            support."
+          img="dashboard"
+          head="Modern Control Panel"
+          desc="Control panel optimized for Minecraft server and plugin support."
+        />
+        <CardComponent
+          img="payments"
+          head="Prepaid based"
+          desc="Pay only what you need; auto-payment occurs only if it’s enabled and you have enough gems."
         />
       </div>
     </div>

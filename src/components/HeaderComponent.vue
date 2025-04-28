@@ -6,8 +6,11 @@ import ExternalLink from './header/ExternalLink.vue'
 <template>
   <header class="w-full h-20 flex items-center gap-8 text-white text-xl">
     <div class="ml-48 w-full flex justify-start">
-      <div class="flex gap-4 cursor-pointer" onclick="window.open('/', '_self')">
-        <img src="" alt="Logo" />
+      <div
+        class="flex items-center gap-2 cursor-pointer text-3xl font-serif"
+        onclick="window.open('/', '_self')"
+      >
+        <img src="/logo.png" alt="Logo" class="w-18" />
         <p>2weeksmc</p>
       </div>
     </div>
