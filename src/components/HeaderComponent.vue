@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import InternalLink from './header/InternalLink.vue'
 import ExternalLink from './header/ExternalLink.vue'
+import { ref } from 'vue'
+
+const loggedIn = ref(false)
 </script>
 
 <template>
@@ -20,7 +23,8 @@ import ExternalLink from './header/ExternalLink.vue'
       <InternalLink route="/contact" route-name="Contact" />
       <ExternalLink route="https://2weeksmc.shop" route-name="Shop" />
       <ExternalLink route="https://2weeksmc.cloud" route-name="Panel" />
-      <ExternalLink route="https://account.2weeksmc.com" route-name="Account" />
+      <ExternalLink v-if="!loggedIn" route="https://account.2weeksmc.com" route-name="Login" />
+      <ExternalLink v-else route="https://account.2weeksmc.com" route-name="Account" />
     </div>
   </header>
 </template>
