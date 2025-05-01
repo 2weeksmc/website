@@ -26,7 +26,7 @@ import CardComponent from '@/components/home/CardComponent.vue'
         />
         <CardComponent
           img="dashboard"
-          head="Modern Control Panel"
+          head="Modern Control-Panel"
           desc="Control panel optimized for Minecraft server and plugin support."
         />
         <CardComponent
