@@ -13,4 +13,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    port: 80,
+    allowedHosts: [
+      '2weeksmc.local',
+      '2weeksmcpanel.local',
+      'account.2weeksmc.local',
+      '2weeksmcshop.local',
+    ],
+  },
 })

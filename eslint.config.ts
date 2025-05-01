@@ -8,11 +8,6 @@ import pluginCypress from 'eslint-plugin-cypress/flat'
 import pluginOxlint from 'eslint-plugin-oxlint'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
-
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
@@ -23,18 +18,27 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  
+
+  // override just this rule:
+  {
+    rules: {
+      '@typescript-eslint/no-empty-object-type': [
+        'error',
+        {
+          allowObjectTypes: true,
+        },
+      ],
+    },
+  },
+
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
-  
+
   {
     ...pluginCypress.configs.recommended,
-    files: [
-      'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}',
-      'cypress/support/**/*.{js,ts,jsx,tsx}'
-    ],
+    files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}', 'cypress/support/**/*.{js,ts,jsx,tsx}'],
   },
   ...pluginOxlint.configs['flat/recommended'],
   skipFormatting,
