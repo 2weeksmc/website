@@ -2,13 +2,12 @@ import { globalIgnores } from 'eslint/config'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import pluginVue from 'eslint-plugin-vue'
 import pluginVitest from '@vitest/eslint-plugin'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import pluginCypress from 'eslint-plugin-cypress/flat'
 import pluginOxlint from 'eslint-plugin-oxlint'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
-export default defineConfigWithVueTs(
+const config: ReturnType<typeof defineConfigWithVueTs> = defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
@@ -19,15 +18,9 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
 
-  // override just this rule:
   {
     rules: {
-      '@typescript-eslint/no-empty-object-type': [
-        'error',
-        {
-          allowObjectTypes: true,
-        },
-      ],
+      '@typescript-eslint/no-empty-object-type': ['error', { allowObjectTypes: true }],
     },
   },
 
@@ -40,6 +33,9 @@ export default defineConfigWithVueTs(
     ...pluginCypress.configs.recommended,
     files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}', 'cypress/support/**/*.{js,ts,jsx,tsx}'],
   },
+
   ...pluginOxlint.configs['flat/recommended'],
   skipFormatting,
 )
+
+export default config
