@@ -14,37 +14,31 @@ const props = defineProps({
   },
 })
 
-const routeObj = useRoute()
+const route = useRoute()
 
 const isActive = computed(() => {
-  const currentPath = routeObj.path
-  const hostname = window.location.hostname
+  let target: URL
 
-  const pathMatches = currentPath === props.route
-  const onMainHost = hostname === '2weeksmc.local'
-  const onAccountHost = hostname === 'account.2weeksmc.local'
-  const onPanelHost = hostname === '2weeksmcpanel.local'
-  const onShopHost = hostname === '2weeksmcshop.local'
-  if (onMainHost) {
-    return onMainHost && pathMatches
+  try {
+    target = new URL(props.route, window.location.origin)
+  } catch {
+    return false
   }
-  if (onAccountHost) {
-    return onAccountHost && props.route.includes('account.2weeksmc.com')
+
+  if (target.hostname !== window.location.hostname) {
+    return false
   }
-  if (onPanelHost) {
-    return onPanelHost && props.route.includes('2weeksmc.cloud')
-  }
-  if (onShopHost) {
-    return onShopHost && props.route.includes('2weeksmc.shop')
-  }
-  return false
+
+  const normalize = (p: string) => (p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p)
+
+  return normalize(route.path) === normalize(target.pathname)
 })
 </script>
 
 <template>
   <div class="relative py-2">
     <a
-      :href="route"
+      :href="props.route"
       :class="{
         'before:absolute before:bottom-[8px] before:w-full before:h-[2px] before:bg-[#FF8C00]':
           isActive,

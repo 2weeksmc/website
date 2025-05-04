@@ -2,7 +2,7 @@
 import LinkComponent from './header/LinkComponent.vue'
 import { ref } from 'vue'
 
-const loggedIn = ref(false)
+const loggedIn = ref(true)
 </script>
 
 <template>
@@ -17,17 +17,17 @@ const loggedIn = ref(false)
       </div>
     </div>
     <div class="mr-48 w-full flex justify-end gap-8">
-      <LinkComponent route="/" route-name="Home" />
-      <LinkComponent route="/about" route-name="About" />
-      <LinkComponent route="/contact" route-name="Contact" />
-      <LinkComponent route="http://2weeksmc.shop" route-name="Shop" />
-      <LinkComponent route="http://2weeksmc.cloud" route-name="Panel" />
+      <LinkComponent route="http://2weeksmc.local" route-name="Home" />
+      <LinkComponent route="http://2weeksmc.local/about" route-name="About" />
+      <LinkComponent route="http://2weeksmc.local/contact" route-name="Contact" />
+      <LinkComponent route="http://2weeksmcshop.local" route-name="Shop" />
+      <LinkComponent route="http://2weeksmcpanel.local" route-name="Panel" />
       <LinkComponent
         v-if="!loggedIn"
-        route="http://account.2weeksmc.com/login"
+        route="http://account.2weeksmc.local/login"
         route-name="Login"
       />
-      <LinkComponent v-else route="http://account.2weeksmc.com" route-name="Account" />
+      <LinkComponent v-else route="http://account.2weeksmc.local" route-name="Account" />
     </div>
   </header>
 </template>
