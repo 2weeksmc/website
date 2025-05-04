@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import InternalLink from './header/InternalLink.vue'
-import ExternalLink from './header/ExternalLink.vue'
+import LinkComponent from './header/LinkComponent.vue'
 import { ref } from 'vue'
 
 const loggedIn = ref(false)
@@ -18,13 +17,17 @@ const loggedIn = ref(false)
       </div>
     </div>
     <div class="mr-48 w-full flex justify-end gap-8">
-      <InternalLink route="/" route-name="Home" />
-      <InternalLink route="/about" route-name="About" />
-      <InternalLink route="/contact" route-name="Contact" />
-      <ExternalLink route="https://2weeksmc.shop" route-name="Shop" />
-      <ExternalLink route="https://2weeksmc.cloud" route-name="Panel" />
-      <ExternalLink v-if="!loggedIn" route="https://account.2weeksmc.com" route-name="Login" />
-      <ExternalLink v-else route="https://account.2weeksmc.com" route-name="Account" />
+      <LinkComponent route="/" route-name="Home" />
+      <LinkComponent route="/about" route-name="About" />
+      <LinkComponent route="/contact" route-name="Contact" />
+      <LinkComponent route="http://2weeksmc.shop" route-name="Shop" />
+      <LinkComponent route="http://2weeksmc.cloud" route-name="Panel" />
+      <LinkComponent
+        v-if="!loggedIn"
+        route="http://account.2weeksmc.com/login"
+        route-name="Login"
+      />
+      <LinkComponent v-else route="http://account.2weeksmc.com" route-name="Account" />
     </div>
   </header>
 </template>

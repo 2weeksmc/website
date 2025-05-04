@@ -1,8 +1,7 @@
 import { type RouteRecordRaw } from 'vue-router'
 import LoginView from '@/views/account/LoginView.vue'
 import LogoutView from '@/views/account/LogoutView.vue'
-import InformationView from '@/views/account/InformationView.vue'
-import BalanceView from '@/views/account/BalanceView.vue'
+import AccountView from '@/views/account/AccountView.vue'
 
 export const accountRoutes: RouteRecordRaw[] = [
   {
@@ -18,11 +17,6 @@ export const accountRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Information',
-    component: InformationView,
-  },
-  {
-    path: '/balance',
-    name: 'Balance',
-    component: BalanceView,
+    component: AccountView,
   },
 ]

@@ -1,12 +1,11 @@
 <script setup lang="ts">
+import BannerComponent from '@/components/BannerComponent.vue'
 import CardComponent from '@/components/home/CardComponent.vue'
 </script>
 
 <template>
   <main class="w-full min-h-[calc(100svh-5rem)] text-white">
-    <div class="relative w-full h-100 bg-[url(/server.png)] bg-no-repeat bg-cover bg-center">
-      <div class="absolute w-full h-full bg-[#FF8C00]/15"></div>
-    </div>
+    <BannerComponent img="/server.png" />
     <div class="w-full flex flex-col items-center">
       <div class="max-w-3/4 p-16 flex flex-wrap justify-center gap-8">
         <CardComponent
