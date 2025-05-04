@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   height: {
     type: String,
     default: 'h-100',
@@ -17,7 +17,7 @@ defineProps({
       'relative',
       'w-full',
       height,
-      'bg-[url(' + img + ')]',
+      `bg-[url('${img}')]`,
       'bg-no-repeat',
       'bg-cover',
       'bg-center',

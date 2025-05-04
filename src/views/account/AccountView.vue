@@ -28,7 +28,7 @@ const topOffset = computed(() => `${selectedIndex.value * strideRem}rem`)
     <BannerComponent height="h-50" img="/server.png" />
     <div class="w-full flex flex-col items-center">
       <div class="my-16 w-3/4 min-h-100 flex bg-[#1E1E1E] rounded-2xl">
-        <div class="w-1/5 h-100">
+        <div class="min-w-70 w-1/5 h-100">
           <ul class="relative mt-20 w-full flex flex-col items-center gap-4">
             <span
               :style="{ top: topOffset }"
