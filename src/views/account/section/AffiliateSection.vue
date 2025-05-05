@@ -1,0 +1,1 @@
+<template>Section Affiliate</template>

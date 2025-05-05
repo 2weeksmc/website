@@ -1,1 +1,0 @@
-<template>Section Information</template>
