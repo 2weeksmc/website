@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const selectedPaymentMethod = ref<
-  'paypal',
-  'paysafecard',
-  'sofort',
-  'credit card',
-  'google pay',
-  'apple pay'
->(null)
+type PaymentMethod =
+  | 'paypal'
+  | 'paysafecard'
+  | 'sofort'
+  | 'credit card'
+  | 'google pay'
+  | 'apple pay'
 
-function selectPaymentMethod(method: typeof currentSection.value) {
+const selectedPaymentMethod = ref<PaymentMethod | null>(null)
+
+function selectPaymentMethod(method: PaymentMethod) {
   selectedPaymentMethod.value = method
 }
 </script>
