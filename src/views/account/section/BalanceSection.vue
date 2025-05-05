@@ -3,9 +3,11 @@ import { ref } from 'vue'
 import TransactionsSection from '@/views/account/section/balance/TransactionsSection.vue'
 import RechargeSection from '@/views/account/section/balance/RechargeSection.vue'
 
-const currentSection = ref<'recharge' | 'transactions'>('recharge')
+type Section = 'recharge' | 'transactions'
 
-function showSection(section) {
+const currentSection = ref<Section>('recharge')
+
+function showSection(section: Section) {
   currentSection.value = section
   document.querySelectorAll('.balance-section-switch').forEach((element) => {
     element.classList.remove('bg-[#FF8C00]')
