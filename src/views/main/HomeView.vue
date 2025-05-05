@@ -5,7 +5,7 @@ import CardComponent from '@/components/home/CardComponent.vue'
 
 <template>
   <main class="w-full min-h-[calc(100svh-5rem)] text-white">
-    <BannerComponent img="/server.png" />
+    <BannerComponent />
     <div class="w-full flex flex-col items-center">
       <div class="max-w-3/4 p-16 flex flex-wrap justify-center gap-8">
         <CardComponent

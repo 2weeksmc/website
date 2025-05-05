@@ -4,17 +4,13 @@ const props = defineProps({
     type: String,
     default: 'h-100',
   },
-  img: {
-    type: String,
-    required: true,
-  },
 })
 
 const containerClass = [
   'relative',
   'w-full',
   props.height,
-  `bg-[url('${props.img}')]`,
+  'bg-[url("/server.png")]',
   'bg-no-repeat',
   'bg-cover',
   'bg-center',
