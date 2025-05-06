@@ -2,15 +2,7 @@
 import PaymentComponent from '@/components/account/balance/PaymentComponent.vue'
 import { ref } from 'vue'
 
-type PaymentMethod =
-  | 'paypal'
-  | 'paysafecard'
-  | 'sofort'
-  | 'credit-card'
-  | 'google-pay'
-  | 'apple-pay'
-
-const selectedPaymentMethod = ref<PaymentMethod | null>(null)
+const selectedPaymentMethod = ref<string | null>(null)
 
 function selectPaymentMethod(method: string) {
   selectedPaymentMethod.value = method
