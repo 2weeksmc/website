@@ -1,12 +1,30 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import LinkComponent from './header/LinkComponent.vue'
 import { ref } from 'vue'
+import { onUnmounted } from 'vue'
 
 const loggedIn = ref(true)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <header class="w-full h-20 flex items-center gap-8 text-white text-xl">
+  <header
+    id="header"
+    :class="{ 'bg-[#111111]': isScrolled }"
+    class="fixed top-0 w-full h-20 flex items-center gap-8 text-white text-xl transition-colors duration-200 z-50"
+  >
     <div class="ml-48 w-full flex justify-start">
       <div
         class="flex items-center gap-2 cursor-pointer text-3xl font-serif"
