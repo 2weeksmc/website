@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType } from 'vue'
+import { type PropType } from 'vue'
 
 const props = defineProps({
   name: { type: String as PropType<string>, required: true },
