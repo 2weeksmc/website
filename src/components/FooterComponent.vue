@@ -18,7 +18,7 @@ import LinkComponent from '@/components/footer/LinkComponent.vue'
         <p class="mb-2 text-white text-lg font-semibold">Company</p>
         <LinkComponent route-name="About" route="http://2weeksmc.local/about" />
         <LinkComponent route-name="Team" route="http://2weeksmc.local/about#team" />
-        <LinkComponent route-name="Carrier" route="http://2weeksmc.local/carrier" />
+        <LinkComponent route-name="Career" route="http://2weeksmc.local/career" />
         <LinkComponent route-name="Blog" route="http://blog.2weeksmc.local" />
       </div>
       <div class="w-50 h-4/5 flex flex-col gap-2">

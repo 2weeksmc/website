@@ -19,6 +19,8 @@ export default defineConfig({
       '2weeksmc.local',
       '2weeksmcpanel.local',
       'account.2weeksmc.local',
+      'blog.2weeksmc.local',
+      'ticket.2weeksmc.local',
       '2weeksmcshop.local',
     ],
   },

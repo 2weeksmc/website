@@ -23,9 +23,9 @@ onUnmounted(() => {
   <header
     id="header"
     :class="{ 'bg-[#111111]': isScrolled }"
-    class="fixed top-0 w-full h-20 flex items-center gap-8 text-white text-xl transition-colors duration-200 z-50"
+    class="fixed top-0 w-full h-20 flex justify-between items-center gap-8 text-white text-xl transition-colors duration-200 z-50"
   >
-    <div class="ml-48 w-full flex justify-start">
+    <div class="ml-48 flex justify-start">
       <div
         class="flex items-center gap-2 cursor-pointer text-3xl font-serif"
         onclick="window.open('/', '_self')"
@@ -34,8 +34,9 @@ onUnmounted(() => {
         <p>2weeksmc</p>
       </div>
     </div>
-    <div class="mr-48 w-full flex justify-end gap-8">
+    <div class="mr-48 flex justify-end gap-8">
       <LinkComponent route="http://2weeksmc.local" route-name="Home" />
+      <LinkComponent route="http://2weeksmc.local/pricing" route-name="Pricing" />
       <LinkComponent route="http://2weeksmc.local/about" route-name="About" />
       <LinkComponent route="http://2weeksmc.local/contact" route-name="Contact" />
       <LinkComponent route="http://2weeksmcshop.local" route-name="Shop" />

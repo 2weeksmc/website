@@ -13,7 +13,7 @@ function selectPaymentMethod(method: string) {
   <div class="flex flex-col gap-6">
     <div>
       <p class="mb-4 text-2xl">Payment methods</p>
-      <div class="p-1 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="p-1 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
         <PaymentComponent
           name="paypal"
           :selected="selectedPaymentMethod"
@@ -47,7 +47,6 @@ function selectPaymentMethod(method: string) {
       </div>
     </div>
     <div>
-      <p class="mb-4 text-lg">Amount</p>
       <input
         type="number"
         placeholder="0.00"
