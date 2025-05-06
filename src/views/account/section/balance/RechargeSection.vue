@@ -12,7 +12,7 @@ type PaymentMethod =
 
 const selectedPaymentMethod = ref<PaymentMethod | null>(null)
 
-function selectPaymentMethod(method: PaymentMethod) {
+function selectPaymentMethod(method: string) {
   selectedPaymentMethod.value = method
 }
 </script>
