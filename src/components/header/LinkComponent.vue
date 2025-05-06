@@ -43,7 +43,7 @@ const isActive = computed(() => {
         'before:absolute before:bottom-[8px] before:w-full before:h-[2px] before:bg-[#FF8C00]':
           isActive,
       }"
-      class="transition-colors duration-200 ease-in-out hover:text-stone-400"
+      class="transition-colors duration-200 ease-in-out hover:text-[#FF8C00]"
       >{{ routeName }}</a
     >
   </div>

@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import PaymentComponent from '@/components/account/balance/PaymentComponent.vue'
 import { ref } from 'vue'
 
 type PaymentMethod =
   | 'paypal'
   | 'paysafecard'
   | 'sofort'
-  | 'credit card'
-  | 'google pay'
-  | 'apple pay'
+  | 'credit-card'
+  | 'google-pay'
+  | 'apple-pay'
 
 const selectedPaymentMethod = ref<PaymentMethod | null>(null)
 
@@ -21,76 +22,36 @@ function selectPaymentMethod(method: PaymentMethod) {
     <div>
       <p class="mb-4 text-2xl">Payment methods</p>
       <div class="p-1 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'paypal',
-          }"
-          class="overflow-hidden h-20 flex justify-center items-center rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('paypal')"
-        >
-          <img src="/recharge/paypal.png" alt="" class="object-cover object-center w-full h-full" />
-        </div>
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'paysafecard',
-          }"
-          class="overflow-hidden h-20 rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('paysafecard')"
-        >
-          <img
-            src="/recharge/paysafecard.png"
-            alt=""
-            class="object-cover object-center w-full h-full"
-          />
-        </div>
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'sofort',
-          }"
-          class="overflow-hidden h-20 rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('sofort')"
-        >
-          <img src="/recharge/sofort.png" alt="" class="object-cover object-center w-full h-full" />
-        </div>
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'credit card',
-          }"
-          class="overflow-hidden h-20 rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('credit card')"
-        >
-          <img
-            src="/recharge/credit-card.png"
-            alt=""
-            class="object-cover object-center w-full h-full"
-          />
-        </div>
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'google pay',
-          }"
-          class="overflow-hidden h-20 rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('google pay')"
-        >
-          <img
-            src="/recharge/google-pay.png"
-            alt=""
-            class="object-cover object-center w-full h-full"
-          />
-        </div>
-        <div
-          :class="{
-            'shadow-[0_0_5px_1px_#ffffff]': selectedPaymentMethod === 'apple pay',
-          }"
-          class="overflow-hidden h-20 rounded-3xl transition-[box-shadow] duration-300 ease-in-out cursor-pointer"
-          @click="selectPaymentMethod('apple pay')"
-        >
-          <img
-            src="/recharge/apple-pay.png"
-            alt=""
-            class="object-cover object-center w-full h-full"
-          />
-        </div>
+        <PaymentComponent
+          name="paypal"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
+        <PaymentComponent
+          name="paysafecard"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
+        <PaymentComponent
+          name="sofort"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
+        <PaymentComponent
+          name="credit-card"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
+        <PaymentComponent
+          name="google-pay"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
+        <PaymentComponent
+          name="apple-pay"
+          :selected="selectedPaymentMethod"
+          @select="selectPaymentMethod"
+        />
       </div>
     </div>
     <div>
