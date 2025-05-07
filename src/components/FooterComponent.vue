@@ -9,7 +9,10 @@ import LinkComponent from '@/components/footer/LinkComponent.vue'
         <p class="text-white text-lg font-semibold">2weeksmc Handrick & Kaemereit GbR</p>
         <p class="mb-4 text-white">Copyright &copy; 2025</p>
         <p>We are a hosting company for fast and powerful dockerized minecraft servers.</p>
-        <div class="mt-4">
+        <div
+          class="mt-4 cursor-pointer"
+          onclick="window.open('https://skrime.eu/a/eztxmmc', '_blank')"
+        >
           <p class="text-white text-xl font-semibold">Partnered with</p>
           <img src="/skrime.png" class="h-12" />
         </div>
