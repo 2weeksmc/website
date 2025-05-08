@@ -39,7 +39,6 @@ onUnmounted(() => {
       <LinkComponent route="http://2weeksmc.local/pricing" route-name="Pricing" />
       <LinkComponent route="http://2weeksmc.local/about" route-name="About" />
       <LinkComponent route="http://2weeksmc.local/contact" route-name="Contact" />
-      <LinkComponent route="http://2weeksmcshop.local" route-name="Shop" />
       <LinkComponent route="http://2weeksmcpanel.local" route-name="Panel" />
       <LinkComponent
         v-if="!loggedIn"
