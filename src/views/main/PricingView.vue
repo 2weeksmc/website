@@ -40,7 +40,7 @@ onMounted(() => {
             storage="16"
             plugin-support-amount="5"
             mod-support-amount="0"
-            :price="isOnCooldown ? '1.99' : '0.00'"
+            :price="isOnCooldown ? '2.49' : '0.00'"
             special="Only runs for 2 weeks. Available next after 3 months."
           />
           <PricingCardComponent
