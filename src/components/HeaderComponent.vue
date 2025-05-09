@@ -7,6 +7,13 @@ import { onUnmounted } from 'vue'
 const loggedIn = ref(true)
 const isScrolled = ref(false)
 
+const props = defineProps({
+  fixed: {
+    type: Boolean,
+    required: true,
+  },
+})
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
 }
@@ -22,8 +29,8 @@ onUnmounted(() => {
 <template>
   <header
     id="header"
-    :class="{ 'bg-[#111111]': isScrolled }"
-    class="fixed top-0 w-full h-20 flex justify-between items-center gap-8 text-white text-xl transition-colors duration-200 z-50"
+    :class="{ 'bg-[#111111]': isScrolled && props.fixed, fixed: props.fixed }"
+    class="top-0 w-full h-20 flex justify-between items-center gap-8 text-white text-xl transition-colors duration-200 z-50"
   >
     <div class="ml-48 flex justify-start">
       <div
